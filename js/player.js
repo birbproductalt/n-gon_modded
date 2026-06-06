@@ -268,19 +268,19 @@ const m = {
         //Math.abs(player.velocity.x) < 7.5
         if (input.left && !input.right) {
             if (moveX > -2) {
-                player.force.x -= m.Fx * 1.5
+                player.force.x -= m.Fx * 5.5
             } else {
                 player.force.x -= m.Fx
             }
             // }
         } else if (input.right && !input.left) {
             if (moveX < 2) {
-                player.force.x += m.Fx * 1.5
+                player.force.x += m.Fx * 5.5
             } else {
                 player.force.x += m.Fx
             }
         } else {
-            const stoppingFriction = 0.92; //come to a stop if no move key is pressed
+            const stoppingFriction = 0; //come to a stop if no move key is pressed
             Matter.Body.setVelocity(player, { x: m.moverX * 0.08 + player.velocity.x * stoppingFriction, y: player.velocity.y * stoppingFriction });
         }
 
